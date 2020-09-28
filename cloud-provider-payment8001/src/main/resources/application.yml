@@ -1,0 +1,28 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: cloud-payment-service
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.gjt.mm.mysql.Driver
+    url: jdbc:mysql://localhost:3306/springcloud?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: liuqi980406
+
+
+mybatis:
+  # 搜索指定的包名
+  type-aliases-package: study.qi.entities
+  # 配置 mapper 的扫描，找到所有的 mapper.xml 映射文件
+  mapperLocations: classpath*:mapper/*.xml
+
+eureka:
+  client:
+    # 表示是否将自己注册进 Eureka Server，默认为true
+    register-with-eureka: true
+    # 是否从Eureka Server中抓取已有的注册信息，默认为true，单节点无所谓，集群必须设置为true才能配合ribbon使用负载均衡
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka
