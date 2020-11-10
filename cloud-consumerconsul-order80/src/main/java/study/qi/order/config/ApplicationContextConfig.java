@@ -1,4 +1,4 @@
-package study.qi.consumer.config;
+package study.qi.order.config;
 
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
@@ -8,7 +8,7 @@ import org.springframework.web.client.RestTemplate;
 /**
  * @Description
  * @Author qi
- * @Date 2020/11/10 16:28
+ * @Date 2020/11/10 17:39
  * @ClassName ApplicationContextConfig
  **/
 @Configuration
