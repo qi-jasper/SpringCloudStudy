@@ -6,7 +6,6 @@ package study.qi.entities;
  * @Date 2020/8/9 14:16
  * @ClassName CommonResult
  **/
-
 public class CommonResult<T> {
 
     private Integer code;

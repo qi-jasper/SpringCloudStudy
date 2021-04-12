@@ -8,7 +8,6 @@ import java.io.Serializable;
  * @Date 2020/8/9 14:14
  * @ClassName Payment
  **/
-
 public class Payment implements Serializable {
     private Long id;
     private String serial;

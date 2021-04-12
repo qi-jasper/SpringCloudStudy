@@ -4,7 +4,6 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import study.qi.entities.Payment;
 
-//
 @Mapper
 public interface PaymentDao {
 

@@ -9,7 +9,6 @@ import study.qi.entities.Payment;
  * @Date 2020/8/9 21:57
  * @ClassName PaymenService
  **/
-
 public interface PaymenService {
 
     int create(Payment payment);
