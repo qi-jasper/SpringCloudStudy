@@ -11,5 +11,7 @@ eureka:
     # false 表示自己就是注册中心，其职责就是维护服务实例，并不需要去检索服务
     fetch-registry: false
     service-url:
-      # 作用域，这里不一样了
+      # 作用域，集群指向其他的 Eureka
       defaultZone: http://eureka7002.com:7002/eureka/
+      # 单机指向自己
+#      defaultZone: http://eureka7001.com:7001/eureka/
