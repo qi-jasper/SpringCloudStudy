@@ -1,0 +1,47 @@
+server:
+  port: 8802
+
+spring:
+  application:
+    name: cloud-stream-provider
+  cloud:
+    stream:
+      binders:
+        # 表示定义的名称，用于与 binding 整合
+        defaultRabbit:
+          # 消息组件类型
+          type: rabbit
+          # 设置 RabbitMQ 相关环境配置
+          environment:
+            spring:
+              rabbitmq:
+                host: localhost
+                port: 5672
+                username: qi
+                password: qi
+      # 服务整合处理
+      bindings:
+        # 这个是一个输入通道的名称
+        input:
+          # 表示要使用的 Exchange 的名称
+          destination: studyExchange
+          # 设置消息类型，本次是 json，文本则设置 "text/plain"
+          content-type: application/json
+          # 设置要绑定的消息服务的具体设置，即 defaultRabbit
+          binder: defaultRabbit
+          # 划分分组，8802 和 8803 划分到同一个分组中
+          group: consumerGroup
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://locahost:7001/eureka
+  instance:
+    # 如果现在超过了 5 秒的间隔（默认是 90 秒）
+    lease-expiration-duration-in-seconds: 5
+    # 设置心跳时间的间隔（默认是 30 秒）
+    lease-renewal-interval-in-seconds: 2
+    # 在信息列表里显示的主机名称
+    instance-id: send-8802.com
+    # 访问的路径变为 IP 地址
+    prefer-ip-address: true
