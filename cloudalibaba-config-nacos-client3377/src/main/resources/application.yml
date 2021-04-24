@@ -1,0 +1,8 @@
+spring:
+  profiles:
+    # 开发环境
+    active: dev
+    # 测试环境，需要哪个就配置哪个，不需要的注释掉即可
+    # active: test
+    # 开发环境
+    # active: pro
